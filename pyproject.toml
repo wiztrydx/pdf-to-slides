@@ -17,8 +17,12 @@ dependencies = [
     "rich>=13.0",
 ]
 
+[project.optional-dependencies]
+bot = ["python-telegram-bot>=21.0"]
+
 [project.scripts]
 gws = "gws_cli.main:cli"
+gws-bot = "gws_cli.bot:main"
 
 [tool.setuptools.packages.find]
 include = ["gws_cli*"]

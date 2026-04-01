@@ -96,6 +96,55 @@ gws auth-logout                        # Remove stored credentials
 gws --version                          # Show version
 ```
 
+## Telegram Bot
+
+Use gws from your phone via Telegram.
+
+### Setup
+
+1. Install with bot extras:
+
+```bash
+pip install -e ".[bot]"
+```
+
+2. Create a bot with [@BotFather](https://t.me/BotFather) on Telegram and get the token.
+
+3. Run the bot:
+
+```bash
+export TELEGRAM_BOT_TOKEN="your-token-here"
+
+# Optional: restrict to specific Telegram user IDs (comma-separated)
+export GWS_BOT_ALLOWED_USERS="123456789,987654321"
+
+gws-bot
+```
+
+### Bot Commands
+
+| Command | Description |
+|---|---|
+| `/start` | Show help |
+| `/drive_ls [folder_id]` | List files |
+| `/drive_upload` | Reply to file to upload |
+| `/drive_download <id>` | Download file |
+| `/drive_mkdir <name>` | Create folder |
+| `/drive_info <id>` | File info |
+| `/slides_create <title>` | New presentation |
+| `/slides_info <id>` | List slides |
+| `/slides_add <id> [layout]` | Add slide |
+| `/slides_export <id>` | Export as PDF |
+| `/gmail_inbox [n]` | Recent messages |
+| `/gmail_read <id>` | Read message |
+| `/gmail_send <to> \| <subj> \| <body>` | Send email |
+| `/gmail_search <query>` | Search |
+| `/gmail_labels` | List labels |
+| `/docs_create <title>` | New doc |
+| `/docs_read <id>` | Read content |
+| `/docs_append <id> \| <text>` | Append text |
+| `/docs_export <id>` | Export PDF |
+
 ## License
 
 MIT
