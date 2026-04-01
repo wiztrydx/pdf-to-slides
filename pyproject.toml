@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gws-cli"
+version = "0.1.0"
+description = "Google Workspace CLI - manage Drive, Slides, Gmail, and Docs from the terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "click>=8.1",
+    "google-api-python-client>=2.100",
+    "google-auth-httplib2>=0.1",
+    "google-auth-oauthlib>=1.1",
+    "rich>=13.0",
+]
+
+[project.scripts]
+gws = "gws_cli.main:cli"
+
+[tool.setuptools.packages.find]
+include = ["gws_cli*"]
